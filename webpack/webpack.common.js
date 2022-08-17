@@ -9,6 +9,9 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
 module.exports = (env) => ({
   entry: path.resolve(__dirname, "..", "./src/index.tsx"),
   resolve: {
+      alias: {
+        src: path.resolve(__dirname, 'src/') 
+      },
     extensions: [".tsx", ".ts", ".js"],
   },
   module: {
@@ -58,6 +61,21 @@ module.exports = (env) => ({
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: "html-loader",
+          },
+          {
+            loader: "markdown-loader",
+            options: {
+              // Pass options to marked
+              // See https://marked.js.org/using_advanced#options
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -117,7 +135,7 @@ module.exports = (env) => ({
         test: /\.xml$/i,
         use: ["xml-loader"],
       },
-      {
+    {
         test: /\.toml$/i,
         type: "json",
         parser: {
@@ -161,13 +179,13 @@ module.exports = (env) => ({
     }),
     // new CopyPlugin({
     // patterns: [
-    //   {from: "src/assets", to:"build/assets"}
+    //   {from: "source", to:"destination"}
     // ]
     // }),
     new BundleAnalyzerPlugin({
       analyzerMode: package.analyze ? "server" : "disabled",
       openAnalyzer: package.analyze ? true : false,
-      generateStatsFile: true,
+      generateStatsFile: package.analyze ? true : false,
       excludeAssets: null,
     }),
   ],

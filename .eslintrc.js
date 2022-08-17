@@ -13,11 +13,7 @@ module.exports = {
       jsx: true,
     },
   },
-  settings: {
-    react: {
-      version: "detect",
-    },
-  },
+
   extends: [
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -29,6 +25,18 @@ module.exports = {
     "plugin:eslint-comments/recommended",
     "plugin:prettier/recommended",
   ],
+  settings: {
+    react: {
+      version: "detect",
+    },
+    "import/resolver": {
+      typescript: true,
+      node: {          
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   overrides: [],
   rules: {
     "no-unused-vars": "off",

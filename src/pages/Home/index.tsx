@@ -1,20 +1,28 @@
-import React, { useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
+const  DetailedContent  = React.lazy(() => import('../../components/DetailedContent'))
+import {ErrorBoundary} from 'react-error-boundary'
+import { ErrorFallback } from '../../components/ErrorFallback';
 
 export const Home = () => {
-  const [DetailedContent, setDetailedContent] = useState<JSX.Element | null>(null);
+  const [showDetailedContent, setShowDetailedContent] = useState<boolean>(false);
+  
   const buttonClickHandler = () => {
-    import('./detailedContent')
-      .then((module) => setDetailedContent(module.default))
-      .catch((error) => console.log(error));
+    setShowDetailedContent(!showDetailedContent)
   }
+
   return (
     <div>
       <h1>
         Home
         </h1>
-      <button onClick={buttonClickHandler}>Click to Get Detailed Info</button>
+      <button onClick={buttonClickHandler}>Click to {showDetailedContent? "Hide" : "Get"} Detailed Info</button>
       {
-        DetailedContent ? <DetailedContent /> : null
+        showDetailedContent &&
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={ () => {}}>
+        <Suspense fallback={<div>Loading....</div>} >
+          <DetailedContent /> 
+        </Suspense>
+      </ErrorBoundary>
       }
     </div>
   )

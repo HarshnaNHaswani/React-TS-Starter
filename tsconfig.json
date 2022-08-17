@@ -1,6 +1,10 @@
 {
   //for type checking
   "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "src/*": ["./src/*"]
+    },
     "target": "ES5",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -19,5 +23,5 @@
     "allowJs": true,
     "checkJs": true
   },
-  "include": ["src/**/*", "declarations.d.ts"]
+  "include": ["src/**/*", "declarations.d.ts", "./**/*.ts", "./**/*.tsx"]
 }

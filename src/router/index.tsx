@@ -9,5 +9,5 @@ export const Router = () => {
       element: <Home />
     }]
   )
-  return Routes;
+  return routes;
 }
