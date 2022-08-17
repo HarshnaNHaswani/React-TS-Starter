@@ -1,6 +1,7 @@
 {
   "name": "react-ts-webpack",
-  "version": "1.0.0",
+  "homepage": "https://harshnanhaswani.github.io/React-TS-Starter/",
+  "version": "0.1.0",
   "description": "A Webpack 5 starter kit for React TS",
   "private": true,
   "browserslist": "> 0.25%, not dead",
@@ -13,7 +14,9 @@
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "lint-rule-timings": "cross-env TIMING=1 npm run lint",
-    "//lint-rule-timings": "get the time taken to run each rule in eslint"
+    "//lint-rule-timings": "get the time taken to run each rule in eslint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "React",
@@ -62,6 +65,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
