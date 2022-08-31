@@ -1,6 +1,6 @@
 # React TS Starter using Webpack 5
 
-Features:
+## Features:
 - Separate development and production configuration
 - TypeScript
 - React
@@ -16,7 +16,7 @@ Features:
 - Automatic asset copy to build folder
 - Basic Folder Structure setup 
 
-Support:
+## Support:
 - Latest ES Modules
 - XML
 - MarkDown
@@ -30,6 +30,7 @@ Support:
 - YAML 
 - JSON
 
+## Command-line Outputs
 Formatting
 https://github.com/HarshnaNHaswani/React-TS-Starter/blob/main/src/screenshots/formatting.jpg
 
@@ -37,4 +38,7 @@ Linting
 https://github.com/HarshnaNHaswani/React-TS-Starter/blob/main/src/screenshots/lint1.jpg
 https://github.com/HarshnaNHaswani/React-TS-Starter/blob/main/src/screenshots/lint2.jpg
 
-Note: Responsive images is broken, hence cur5ently commented 
+Note: Responsive images is broken, hence currently commented 
+
+Use the following command to get this template
+`degit https://github.com/HarshnaNHaswani/React-TS-Starter` 
