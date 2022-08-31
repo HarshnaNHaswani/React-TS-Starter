@@ -1,0 +1,10 @@
+.loader {
+  min-width: 50px;
+  min-height: 50px;
+  position: relative;
+}
+
+.loader::after {
+  position: absolute;
+  content: "Loading....";
+}

@@ -1,16 +1,14 @@
-import detailedContentText from "../../assets/content/detailedContent01.md"
-
+import DetailedContentText from "~/assets/content/detailedContent01.md"
+import { Markdown } from "~/components/Markdown"
 
 const DetailedContent = () => {
   return (
     <div>
-      <h3>     
-          Detailed Content
-        </h3>
+      <h3>Detailed Content</h3>
 
-         {detailedContentText} 
+      <Markdown content={DetailedContentText} />
     </div>
   )
 }
 
-export default DetailedContent;
+export default DetailedContent

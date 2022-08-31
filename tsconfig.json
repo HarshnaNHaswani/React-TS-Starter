@@ -2,8 +2,9 @@
   //for type checking
   "compilerOptions": {
     "baseUrl": "src",
+    "outDir": "./build/",
     "paths": {
-      "src/*": ["./src/*"]
+      "~/*": ["*"],
     },
     "target": "ES5",
     "noImplicitAny": true,

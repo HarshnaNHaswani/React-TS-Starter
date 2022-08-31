@@ -1,13 +1,13 @@
-import React from 'react'
-import { Routes, useRoutes } from 'react-router'
-import { Home } from '../pages';
+import { useRoutes } from "react-router"
+import { Home } from "../pages"
 
 export const Router = () => {
-  const routes= useRoutes(
-    [{
-      path: '/',
-      element: <Home />
-    }]
-  )
-  return routes;
+  const routes = useRoutes([
+    {
+      path: "/",
+      element: <Home />,
+    },
+  ])
+  console.log("in router")
+  return routes
 }

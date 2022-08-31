@@ -15,3 +15,19 @@ declare module "*.svg" {
   const content: string
   export default content
 }
+interface ResponsiveImageOutput {
+  src: string
+  srcSet: string
+  placeholder: string | undefined
+  images: { path: string; width: number; height: number }[]
+  width: number
+  height: number
+  toString: () => string
+}
+
+declare module '*!rl' {
+  const src: ResponsiveImageOutput
+  export default src
+}
+
+// if you need any files as modules other than JS & TS files declare here e.g. font files like .woff
